@@ -1,0 +1,130 @@
+<html>
+  <head>
+
+  <title>Triangle Pegs Solver</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="./lib/p5.min.js"></script>
+
+  <script src="./lib/p5.sound.js"></script>
+
+
+  <style>
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 2em;
+    color: white;
+    line-height: 100px;
+    text-align: center;
+    background: #FF0000;
+  }
+
+  .circlebg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 2em;
+    color: black;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid black;
+    background: #ffffff;
+    z-index: -1;
+  }
+
+  #solveBtn{
+    width: 100px;
+    height: 50px;
+    font-size: 2em;
+    border-radius: 5px;
+    background-color: #808080;
+    color: #FFFFFF;
+    float:right;
+    display: none;
+  }
+
+  #lengthInput{
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    float :left;
+    font-size: 2em;
+  }
+
+  #timeElapsed,#totalSteps{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  #nanoTime{
+    color:green;
+    font-weight: bold;
+  }
+
+  #stepsContainer{
+    width: 100px;
+    height: 300px;
+    border: 1px solid red;
+    position: absolute;
+  }
+
+  #loadinggif{
+    width: 50px;
+    height: 50px;
+  }
+
+  #container{
+    position: relative;
+    height:480;
+    padding-left: 5%;
+    padding-right: 5%;
+
+  }
+
+  #triangleContainer{
+    width: 75%;
+    height: 480px;
+    float: left;
+  }
+  #history{
+    padding-left: 2%;
+    width: 21%;
+    height: inherit;
+    float: right;
+    font-size: 3em;
+    text-align: left;
+    overflow-y: scroll;
+  }
+
+  </style>
+  <script src="./trianglePeg.js"></script>
+
+  </head>
+  <body>
+  <h1 style = "text-align:center;padding-top:1em">The Triangle Checker Solver</h1>
+    <div id = "container">
+      <div id = "triangleContainer">
+        <input type="text" id="lengthInput">
+        <button type="button" id="solveBtn">Solve</button>
+      </div>
+      <div id = "history">
+        <div id="waitMessage">
+          
+        </div>
+      </div>
+        <!--
+         <div>
+           <input type="text" id="lengthInput">
+           <button type="button" id="solveBtn">Solve</button>
+         </div>
+         <div>
+           <button type="button" id="solveBtn">Solve</button>
+         </div>
+       -->
+    </div>
+
+  </body>
+</html>
