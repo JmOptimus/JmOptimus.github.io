@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Manuales ciberseguridad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    
+    <link href="./css/sidebars-day.css" rel="stylesheet">
+    <style>
+        .icon{
+            width: 1.5em;
+        }
+
+        @font-face {
+            font-family: "Hack_Nerd";
+            src: url(./fonts/Hack_Regular_Nerd.ttf);
+        }
+
+        body{
+            font-family: "Hack_Nerd";
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $(".nav-link").click(function(){
+                $click_nav_id = $(this).attr('id');
+                $(".nav-link").each(function(){
+                    $this_id = $(this).attr('id');
+                    if($click_nav_id != $this_id){
+                        $(this).prop("aria-selected",false);
+                        $(this).removeClass('active')
+                    }
+                });
+            
+            });
+        });
+
+        
+        </script>
+    </head>
+
+<body>
+    <div class="d-flex align-items-start">
+
+        <!--Sidebar-->
+        <div class="d-flex flex-column p-3 bg-white" style="width: 25em;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            
+            <a href="ssh://127.0.0.1" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <span id="titulo-menu" class="fs-5 fw-semibold">Ciberseguridad</span>
+            </a>
+
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-manuales" aria-expanded="false">
+                    Manuales
+                    <svg style="margin-left:1em" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                      </svg>
+                    </button>
+                    <div class="collapse hide" id="collapse-manuales">
+                        <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab1" role="tablist" aria-orientation="vertical">
+                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-activar-ssh-tab" data-bs-toggle="pill" data-bs-target="#v-pills-activar-ssh" type="button" role="tab" aria-controls="v-pills-activar-ssh" aria-selected="false">Activación SSH</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-cortafuegos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cortafuegos" type="button" role="tab" aria-controls="v-pills-cortafuegos" aria-selected="false">Cortafuegos</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="border-top my-3"></li>
+
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-comandos" aria-expanded="false">
+                        Comandos
+                        <svg style="margin-left:1em" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-terminal-fill" viewBox="0 0 16 16">
+                            <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm9.5 5.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm-6.354-.354a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146z"/>
+                        </svg>
+                    </button>
+                    <div class="collapse hide" id="collapse-comandos">
+                        
+                        <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                            <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-otros" aria-expanded="false">
+                                Básicos
+                            </button>
+                            <div class="collapse hide" id="collapse-otros">
+                                
+                                <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-sudo-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sudo" type="button" role="tab" aria-controls="v-pills-sudo" aria-selected="false">sudo</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-pwd-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pwd" type="button" role="tab" aria-controls="v-pills-pwd" aria-selected="false">pwd</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-whoami-tab" data-bs-toggle="pill" data-bs-target="#v-pills-whoami" type="button" role="tab" aria-controls="v-pills-whoami" aria-selected="false">whoami</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-cat-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cat" type="button" role="tab" aria-controls="v-pills-cat" aria-selected="false">cat</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    
+                                    <li class="border-top ms-5" style="width: 10em;"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-findstr-tab" data-bs-toggle="pill" data-bs-target="#v-pills-findstr" type="button" role="tab" aria-controls="v-pills-findstr" aria-selected="false">findstr</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-grep-tab" data-bs-toggle="pill" data-bs-target="#v-pills-grep" type="button" role="tab" aria-controls="v-pills-grep" aria-selected="false">grep</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    <li class="border-top ms-5" style="width: 10em;"></li>
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-shutdown-tab" data-bs-toggle="pill" data-bs-target="#v-pills-shutdown" type="button" role="tab" aria-controls="v-pills-shutdown" aria-selected="false">shutdown</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                </ul>
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-redirigir-salida" aria-expanded="false">
+                                Redireccionar la salida
+                            </button>
+                            <div class="collapse hide" id="collapse-redirigir-salida">
+                                <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-redireccion-intro-tab" data-bs-toggle="pill" data-bs-target="#v-pills-redireccion-intro" type="button" role="tab" aria-controls="v-pills-redireccion-intro" aria-selected="false">Introducción</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-redireccion-nuevo-fichero-tab" data-bs-toggle="pill" data-bs-target="#v-pills-redireccion-nuevo-fichero" type="button" role="tab" aria-controls="v-pills-redireccion-nuevo-fichero" aria-selected="false">a nuevo fichero</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-redireccion-final-fichero-tab" data-bs-toggle="pill" data-bs-target="#v-pills-redireccion-final-fichero" type="button" role="tab" aria-controls="v-pills-redireccion-final-fichero" aria-selected="false">al final de un fichero</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" class="icon"></li>
+
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-redireccion-tuberias-tab" data-bs-toggle="pill" data-bs-target="#v-pills-redireccion-tuberias" type="button" role="tab" aria-controls="v-pills-redireccion-tuberias" aria-selected="false">Tuberías</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" class="icon"></li>
+
+                                </ul>
+                            </div>
+
+                            <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-redes" aria-expanded="false">
+                                Redes
+                            </button>
+                            <div class="collapse hide" id="collapse-redes">
+                                
+                                <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                                    
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ipconfig-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ipconfig" type="button" role="tab" aria-controls="v-pills-ipconfig" aria-selected="false">ipconfig</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ifconfig-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ifconfig" type="button" role="tab" aria-controls="v-pills-ifconfig" aria-selected="false">ifconfig</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    <li class="border-top ms-5" style="width: 10em;"></li>
+
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ping-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ping" type="button" role="tab" aria-controls="v-pills-ping" aria-selected="false">ping</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-netstat-tab" data-bs-toggle="pill" data-bs-target="#v-pills-netstat" type="button" role="tab" aria-controls="v-pills-netstat" aria-selected="false">netstat</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-scp-tab" data-bs-toggle="pill" data-bs-target="#v-pills-scp" type="button" role="tab" aria-controls="v-pills-scp" aria-selected="false">scp</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" alt="" class="icon"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ssh-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ssh" type="button" role="tab" aria-controls="v-pills-ssh" aria-selected="false">ssh</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" class="icon"></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="border-top my-3"></li>
+
+                <li class="mb-1">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse2" aria-expanded="true">
+                        Artículos
+                        <svg style="margin-left:1em;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+                            <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+                            <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+                        </svg>
+                    </button>
+                    <div class="collapse hide" id="home-collapse2">
+                        <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab3" role="tablist" aria-orientation="vertical">
+                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-home3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home3" type="button" role="tab" aria-controls="v-pills-home3" aria-selected="false">Artículo 1</span></li>
+                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-profile3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile3" type="button" role="tab" aria-controls="v-pills-profile3" aria-selected="false">Artículo 2</span></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <hr>
+            <div class="dropdown pb-4">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://avatars.githubusercontent.com/u/44059799?s=400&u=48a18e3173482e5d9e153d20c76e253dfd515e0c&v=4" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                    <span class="d-none d-sm-inline mx-1 text-dark">JmOptimus</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <li><a class="dropdown-item" href="https://github.com/JmOptimus" target="_blank"><img src="./imgs/GitHub_Logo_White.png" alt="" style="width: 5em;"></a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <!--**************************** Contenido *********************************************-->
+        <div class="tab-content" id="v-pills-tabContent">
+
+            <!--**************************** Activacion SSH *********************************************-->
+            <div class="tab-pane fade" id="v-pills-activar-ssh" role="tabpanel" aria-labelledby="v-pills-activar-ssh-tab">
+                <div class="container" data-bs-spy="scroll" data-bs-target="#v-pills-tab" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                    <div class="card" style="" id="paso-1">
+                        <img class="card-img-top" src="./imgs/Paso-1.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Aplicaciones predeterminadas</h5>
+                        
+                        <p class="card-text">
+                            <img src="./imgs/win-logo.png" class="icon"> + S<br>
+                            Buscar Aplicaciones predeterminadas.
+                        </p>
+                        <a href="#paso-2" class="btn btn-primary">Paso 2</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-2">
+                        <img class="card-img-top" src="./imgs/Paso-2.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Aplicaciones y características</h5>
+                        
+                        <p class="card-text">
+                            Hacer click en Aplicaciones y características.
+                        </p>
+                        <a href="#paso-3" class="btn btn-primary">Paso 3</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-3">
+                        <img class="card-img-top" src="./imgs/Paso-3.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Características opcionales</h5>
+                        
+                        <p class="card-text">
+                            Hacer click en Características opcionales.
+                        </p>
+                        <a href="#paso-4" class="btn btn-primary">Paso 4</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-4">
+                        <img class="card-img-top" src="./imgs/Paso-4.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Agregar una característica</h5>
+                        
+                        <p class="card-text">
+                            Agregar una característica.
+                        </p>
+                        <a href="#paso-5" class="btn btn-primary">Paso 5</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-5">
+                        <img class="card-img-top" src="./imgs/Paso-5.png" alt="Card image cap">
+                        <div class="card-body">
+                        
+                        <p class="card-text">
+                            Buscar Servidor OpenSSH.
+                        </p>
+                        <a href="#paso-6" class="btn btn-primary">Paso 6</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-6">
+                        <img class="card-img-top" src="./imgs/Paso-6.png" alt="Card image cap">
+                        <div class="card-body">
+                
+                        
+                        <p class="card-text">
+                            <img src="./imgs/win-logo.png" class="icon"> + S<br>
+                            Buscar Servicios
+                        </p>
+                        <a href="#paso-7" class="btn btn-primary">Paso 7</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-7">
+                        <img class="card-img-top" src="./imgs/Paso-7.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Configuración Agente de Autenticación / Servidor OpenSSH</h5>
+                        
+                        <p class="card-text">
+                            En OpenSSH Authentication Agent / OpenSSH SSH Server<br>
+                            Hacer click derecho<br>
+                            Propiedades
+                        </p>
+                        <a href="#paso-8" class="btn btn-primary">Paso 8</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-8">
+                        <img class="card-img-top" src="./imgs/Paso-8.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Tipo de inicio </h5>
+                        
+                        <p class="card-text">
+                            Manual: Cuando se reinicie el ordenador, el servicio estará desactivado.<br>
+                            Automático: El servicio se iniciará cada vez que se inicie el ordenador.
+                        </p>
+                        <a href="#paso-9" class="btn btn-primary">Paso 9</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-9">
+                        <img class="card-img-top" src="./imgs/Paso-9.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Iniciar servicio</h5>
+                        
+                        <p class="card-text">
+                            Estando seleccionado OpenSSH Authentication Agent / OpenSSH SSH Server<br>
+                            Hacer click en <img src="./imgs/play-icon.png" class="icon">
+                        </p>
+                        <a href="#paso-10" class="btn btn-primary">Paso 10</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="paso-10">
+                        <img class="card-img-top" src="./imgs/Paso-10.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Configuración servidor OpenSSH</h5>
+                        
+                        <p class="card-text">
+                            Repetir desde el Paso-7.<br>Esta vez con OpenSSH Server
+                            
+                        </p>
+                        <a href="#paso-7" class="btn btn-primary">Paso 7</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--**************************** Cortafuegos *********************************************-->
+            <div class="tab-pane fade" id="v-pills-cortafuegos" role="tabpanel" aria-labelledby="v-pills-cortafuegos-tab">
+                <img src="imgs/fire.png" alt="" style="padding:20%;width: 20em">
+            </div>
+
+            <!--**************************** Basicos: sudo *********************************************-->
+            <div class="tab-pane fade" id="v-pills-sudo" role="tabpanel" aria-labelledby="v-pills-sudo-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Hace que el comando se ejecute con permisos de root.<br>
+                                Para ello será necesario introducir la contraseña de administrador.<br>
+                                Momentáneamente cambiará a modo root y una vez se haya ejecutado el comando volverá al usuario inicial. 
+                                <br><br>
+                                Modo de uso:<br><br>
+                                <i>sudo comando</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo cat /etc/shadow <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Mostraría por pantalla el contenido del fichero shadow.</i>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo su <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Este comando es ideal para casos en los que necesitemos ejecutar varios comandos en modo root y no queramos escribir "sudo" cada vez.<br>
+                                No olvidarse de escribir "exit" una vez se haya terminado para volver al usuario inical.
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--**************************** Basicos: pwd *********************************************-->
+            <div class="tab-pane fade" id="v-pills-pwd" role="tabpanel" aria-labelledby="v-pills-pwd-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Muestra por pantalla el directorio actual.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                pwd <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Para un hacker, un objetivo podría ser que la respuesta a esa pregunta fuese "root",<br>lo que significaría que habría escalado privilegios satisfactoriamente.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!--**************************** Basicos: whoami *********************************************-->
+             <div class="tab-pane fade" id="v-pills-whoami" role="tabpanel" aria-labelledby="v-pills-whoami-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Muestra por pantalla quién es el usuario actual.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                whoami <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Para un hacker, un objetivo podría ser que la respuesta a esa pregunta fuese "root",<br>lo que significaría que habría escalado privilegios satisfactoriamente.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+
+
+            <!--**************************** Basicos: Cat *********************************************-->
+            <div class="tab-pane fade" id="v-pills-cat" role="tabpanel" aria-labelledby="v-pills-cat-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Su función es mostrar por pantalla todo el contenido de un fichero.<br>
+                                Suele ser útil para pasarle a otro comando el contenido de un fichero como entrada <br><i>(Ver la sección de Tuberías).</i>
+                                <br><br>
+                                Modo de uso:<br>
+                                <i>cat ruta-fichero</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                cat /etc/passwd <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">El comando mostrado arriba imprimiría por pantalla el contenido del fichero de constraseñas en linux.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--**************************** Basicos: Findstr *********************************************-->
+            <div class="tab-pane fade" id="v-pills-findstr" role="tabpanel" aria-labelledby="v-pills-findstr-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Es el comando análogo a grep en linux.<br><br>Devuelve solo aquellas líneas que contengan una cadena de caracteres determinada.<br>
+                                Normalmente se usa conjuntamente con tuberías y otro comando que le proporcione el texto original a filtrar.
+                                <i>(Ver la sección de Tuberías)</i>
+                                <br><br>
+                                Modo de uso:<br>
+                                <i>comando-1</i> | <i>findstr cadena-de-caracteres</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                dir | findstr log <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">El comando mostrado arriba buscará dentro del resultado del comando "dir" (obtener el listado de ficheros/directorios del directorio actual), solo aquellas lineas que contengan la palabra "log" y las mostrará por pantalla.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--**************************** Basicos: grep *********************************************-->
+            <div class="tab-pane fade" id="v-pills-grep" role="tabpanel" aria-labelledby="v-pills-grep-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Es el comando análogo a findstr en windows.<br><br>
+                                
+                                Devuelve solo aquellas líneas que contengan una cadena de caracteres determinada.<br>
+                                Normalmente se usa conjuntamente con tuberías y otro comando que le proporcione el texto original a filtrar.
+                                <i>(Ver la sección de Tuberías)</i>
+                                <br><br>
+                                Modo de uso:<br>
+                                <i>comando-1</i> | <i>findstr cadena-de-caracteres</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                cat /etc/shadow | grep root <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">El comando mostrado arriba imprimiría por pantalla aquellas líneas del fichero shadow que contengan la palabra "root".</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--**************************** Basicos: shutdown *********************************************-->
+            <div class="tab-pane fade" id="v-pills-shutdown" role="tabpanel" aria-labelledby="v-pills-shutdown-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Apaga el equipo desde la consola de comandos.<br>
+                                Puede ser útil para apagar una máquina de forma remota.<br><br>
+                                Suele requerir permisos de root.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo shutdown <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--**************************** Redireccion: Introduccion *********************************************-->
+            <div class="tab-pane fade" id="v-pills-redireccion-intro" role="tabpanel" aria-labelledby="v-pills-redireccion-intro-tab">
+                <div class="container mx mt-5">
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Estamos acostumbrados a escribir un comando en la consola y que,<br>por defecto, nos muestre el resultado por pantalla.
+                                <p>
+                                    Con los separadores que se muestran a continuación seremos capaces de<br>redirigir el cauce natural de esa salida hacia donde más nos convenga.
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <!--**************************** Redireccion: Nuevo fichero *********************************************-->
+            <div class="tab-pane fade" id="v-pills-redireccion-nuevo-fichero" role="tabpanel" aria-labelledby="v-pills-redireccion-nuevo-fichero-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Si queremos que todo lo que saldría normalmente por pantalla tras ejecutar el comando, sea escrito a un fichero destino,<br><br>
+                                Usaremos el separador <b>></b> de la siguiente manera:<br><br>
+                                <i>comando</i> > <i>ruta-fichero-destino</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                dir > contenido-directorio.txt <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ls > contenido-directorio.txt <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Con el comando de arriba se almacenará, en "contenido-directorio.txt", el listado de ficheros y directorios contenidos en el directorio actual."</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Redireccion final de fichero-->
+            <div class="tab-pane fade" id="v-pills-redireccion-final-fichero" role="tabpanel" aria-labelledby="v-pills-redireccion-final-fichero-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Imaginemos que queremos ir registrando en un fichero de log una serie de eventos.<br>
+                                En este caso nos interesa ir concatenando cada nuevo registro en un historial sin sobreescribir la información ya existente.
+                            
+                                <p>
+                                Para este caso particular usaremos el separador <b>>></b> de la siguiente manera:<br><br>
+                                
+                                <i>comando</i> >> <i>ruta-fichero-destino</i>
+                                </p>
+                            </p>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                date >> log.txt <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Cada vez que se ejecute el comando de arriba, se añadirá al final del fichero log.txt la fecha y hora de ese mismo instante."</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Redireccion tuberias-->
+            <div class="tab-pane fade" id="v-pills-redireccion-tuberias" role="tabpanel" aria-labelledby="v-pills-redireccion-tuberias-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Es uno de los separadores más potentes ya que permite comunicar dos comandos/programas y puede encadenarse indefinidamente.<br><br>
+                                La tubería conecta la salida del primer comando con la entrada del segundo.
+                            
+                                <p>
+                                Para construir una tubería entre dos comandos sólo tendremos que escribir | en el medio de ambos:<br><br>
+                                
+                                <i>comando-1</i> | <i>comando-2</i>
+                                </p>
+                            </p>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                cat security-log.txt | grep warning <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">El comando de arriba buscaría dentro de un fichero llamado security-log.txt aquellas lineas que contuvieran la palabra "warning".<br>Finalmente lo mostraría por pantalla.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Redes: ipconfig-->
+            <div class="tab-pane fade" id="v-pills-ipconfig" role="tabpanel" aria-labelledby="v-pills-ipconfig-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Es el comando análogo a ifconfig en linux.<br><br>
+                                Muestra los detalles de la conexión de red de todos los adaptadores de red instalados<br>
+                                (IP, puerta de enlace, máscara, servidor dns ...).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ipconfig <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Versión reducida del comando; sirve si sólo se desea conocer la IP del dispositivo.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ipconfig /all <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Versión extendida del comando; se muestran muchos más datos.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Redes: ifconfig-->
+            <div class="tab-pane fade" id="v-pills-ifconfig" role="tabpanel" aria-labelledby="v-pills-ifconfig-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Es el comando análogo a ipconfig en windows.<br><br>
+                                Muestra los detalles de la conexión de red de todos los adaptadores de red instalados<br>
+                                (IP, puerta de enlace, máscara, servidor dns ...).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ifconfig <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Versión reducida del comando; sirve si sólo se desea conocer la IP del dispositivo.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ifconfig -a <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Versión extendida del comando; se muestran muchos más datos.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Redes: ping-->
+            <div class="tab-pane fade" id="v-pills-ping" role="tabpanel" aria-labelledby="v-pills-ping-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Sirve para saber si un <i>host</i> es accesible desde nuestro <i>host</i>;<br>
+                                siempre y cuando el <i>host</i> que consultemos no tenga bloqueado el protocolo ICMP.
+                            </p>
+
+                            <p class="card-text">
+                                Modo de uso:<br><br>
+                                ping ip-host-destino<br>
+                                ping nombre-host-destino
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ping 10.1.4.11 <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Comprobaría si el host 10.1.4.11 es alcanzable desde mi host.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ping 10.1.4.11 -t <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Al añadir el parámetro -t, la ejecución del comando no parará hasta que el usuario lo decida.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Redes: netstat-->
+            <div class="tab-pane fade" id="v-pills-netstat" role="tabpanel" aria-labelledby="v-pills-netstat-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Es de gran utilidad ya que sirve para monitorizar los puertos que están abiertos en un momento dado, junto con la dirección IP del host que está escuchando en ellos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                netstat -an | findstr ":80" <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                netstat -an | grep ":80" <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Comprobaría qué hosts están escuchando en el puerto 80.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                netstat -o <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small"> Al añadir el parámetro -o, también mostraría el número de identificación del proceso (PID); para poder matarlo después <i>(Ver comando kill/taskkill)</i>.</i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Redes: scp-->
+            <div class="tab-pane fade" id="v-pills-scp" role="tabpanel" aria-labelledby="v-pills-scp-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Sirve para enviar de forma segura (SSH) ficheros/directorios remotamente.<br>
+                               Para ello es necesario que el servidor SSH esté activo <i>(Ver activación SSH).</i><br><br>
+                               Si no se especifica un puerto, por defecto se usará el 22.<br>
+                               Será necesario autenticarse con el usuario especificado. 
+
+                               <p>
+                                Modo de uso:<br>
+                                scp ruta-fichero nombre-usuario@IP-destino:ruta-destino
+                                scp -P puerto ruta-fichero nombre-usuario@IP-destino:ruta-destino
+                               </p>
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                scp virus.exe juan@10.1.4.10:c:\Windows\System32\ <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Enviaría el archivo virus.exe al directorio c:\Windows\System32\ del host ubicado en 10.1.4.10 con usuario "juan" </i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                scp -r /peliculas/ almodovar@10.1.4.10:c:\Users\Documents\Peliculas\ <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Enviaría el directorio (con todo su contenido) a la ruta c:\Users\Documents\Peliculas\ del host ubicado en 10.1.4.10 con usuario "almodovar". </i>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--Redes: ssh-->
+            <div class="tab-pane fade" id="v-pills-ssh" role="tabpanel" aria-labelledby="v-pills-ssh-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Sirve para abrir una consola remota de forma segura (SSH).<br>
+                               Para ello es necesario que el servidor SSH esté activo <i>(Ver activación SSH).</i><br><br>
+                               Si no se especifica nada, el puerto por defecto es el 22.<br>
+                               Será necesario autenticarse con el usuario especificado. 
+
+                               <p>
+                                Modo de uso:<br>
+                                ssh nombre-usuario@IP-destino
+                                ssh -p puerto nombre-usuario@IP-destino
+                               </p>
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ssh tarde@10.1.4.10 <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Se conectaría remotamente al dispositivo ubicado en 10.1.4.10 autenticándose como el usuario "tarde".</i>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
