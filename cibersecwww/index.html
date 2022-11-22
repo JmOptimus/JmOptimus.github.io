@@ -87,16 +87,11 @@
                                     
                                     <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
                                         
-                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-agregar-regla-tab" data-bs-toggle="pill" data-bs-target="#v-pills-agregar-regla" type="button" role="tab" aria-controls="v-pills-agregar-regla" aria-selected="false">añadir una nueva regla</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-agregar-regla-tab" data-bs-toggle="pill" data-bs-target="#v-pills-agregar-regla" type="button" role="tab" aria-controls="v-pills-agregar-regla" aria-selected="false">Añadir una nueva regla</span> <img src="./imgs/win-logo.png" class="icon"></li>
                                     </ul>
                                 </div>
 
                             </div>
-                            
-                            
-                            
-                            
-                            
                             
                             <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-ssh" aria-expanded="false">
                                SSH
@@ -104,7 +99,10 @@
                             <div class="collapse hide" id="collapse-ssh">
                                 <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
                                     <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ssh-intro-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ssh-intro" type="button" role="tab" aria-controls="v-pills-ssh-intro" aria-selected="false">Introducción</span></li>
+
                                     <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-activar-ssh-tab" data-bs-toggle="pill" data-bs-target="#v-pills-activar-ssh" type="button" role="tab" aria-controls="v-pills-activar-ssh" aria-selected="false">Activar OpenSSH</span> <img src="./imgs/win-logo.png" class="icon"></li>
+
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ssh-cambiar-puerto-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ssh-cambiar-puerto" type="button" role="tab" aria-controls="v-pills-ssh-cambiar-puerto" aria-selected="false">Cambiar puerto por defecto</span> <img src="./imgs/win-logo.png" class="icon"></li>
                                 </ul>
                             </div>
                         </ul>
@@ -639,6 +637,199 @@
                     </div>
                 </div>
             </div>
+
+
+            <!--**************************** Cambiar puerto SSH *********************************************-->
+            <div class="tab-pane fade" id="v-pills-ssh-cambiar-puerto" role="tabpanel" aria-labelledby="v-pills-ssh-cambiar-puerto-tab">
+                <div class="container" data-bs-spy="scroll" data-bs-target="#v-pills-tab" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                    <div class="container mx mb-5 mt-3">
+                        <div class="card" style="width: auto">
+                            <div class="card-body">
+                                <p class="card-text p-3">
+                                    Una buena medida de seguridad consiste en cambiar el puerto asociado por defecto para ssh (22)<br>
+                                    ya que muchos ataques se dirigen a configuraciones por defecto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="" id="ssh-2-1">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/6.png" alt="Card image cap">
+                        <div class="card-body">
+                        
+                        <p class="card-text">
+                            <img src="./imgs/win-logo.png" class="icon"> + S<br>
+                            Buscar Servicios.<br>
+                        </p>
+                        <a href="#ssh-2-2" class="btn btn-primary">Paso 2</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="" id="ssh-2-2">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/8.png" alt="Card image cap">
+                        <div class="card-body">
+                        
+                        <p class="card-text">
+                            Buscar y hacer click en <i>OpenSSH Authentication Agent</i>.<br>
+                            Detener el servicio: Darle al <img src="./imgs/stop-icon.png" alt="" class="icon">
+                        </p>
+                        <a href="#ssh-2-3" class="btn btn-primary">Paso 3</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="" id="ssh-2-3">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/9.png" alt="Card image cap">
+                        <div class="card-body">
+                        
+                        <p class="card-text">
+                            Buscar y hacer click en <i>OpenSSH SSH Server</i>.<br>
+                            Detener el servicio: Darle al <img src="./imgs/stop-icon.png" alt="" class="icon">
+                        </p>
+                        <a href="#ssh-2-4" class="btn btn-primary">Paso 4</a>
+                        </div>
+                    </div>
+
+
+                    <div class="card" style="" id="ssh-2-4">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/1.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">PowerShell</h5>
+                        
+                        <p class="card-text">
+                            <img src="./imgs/win-logo.png" class="icon"> + S<br>
+                            Buscar PowerShell.<br>
+                            Click derecho sobre <i>PowerShell</i><br>
+                            Hacer click en <i>Ejecutar como administrador</i>
+                        </p>
+                        <a href="#ssh-2-5" class="btn btn-primary">Paso 5</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-5">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/2.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Abrir Notepad</h5>
+                        
+                        <p class="card-text">
+                            Abrir el fichero de configuración sshd_config con el Notepad.
+                            <div class="card-body bg-dark">
+                                <p class="card-text" style="color:greenyellow">
+                                    <img src="./imgs/powershell-logo.png" alt="" class="icon">   notepad.exe $env:PROGRAMDATA\ssh\sshd_config <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                                </p>
+                            </div>
+                        </p>
+                        <a href="#ssh-2-6" class="btn btn-primary">Paso 6</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-6">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/3.png" alt="">
+                        <div class="card-body">
+                        <h5 class="card-title">Modificar <i>sshd_config</i></h5>
+                        
+                        <p class="card-text">
+                            Buscar la línea #Port 22
+                        </p>
+                        <a href="#ssh-2-7" class="btn btn-primary">Paso 7</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-7">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/4.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Modificar puerto</h5>
+                        
+                        <p class="card-text">
+                            Descomentar (eliminar el # inicial) y sustituir el 22 por el nuevo puerto que se desee usar para SSH.<br>
+                            (<i>Asegurarse de que dicho puerto no está siendo usado</i>).<br>
+                            <br>En el ejemplo será cambiado por el puerto 2222. 
+                        </p>
+                        <a href="#ssh-2-8" class="btn btn-primary">Paso 8</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-8">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/5.png" alt="Card image cap">
+                        <div class="card-body">
+                        
+                        <p class="card-text">
+                            Guardar los cambios<br>
+                            (Ctrl + G).
+                        </p>
+                        <a href="#ssh-2-9" class="btn btn-primary">Paso 9</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-9">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/6.png" alt="Card image cap">
+                        <div class="card-body">
+                
+                        
+                        <p class="card-text">
+                            <img src="./imgs/win-logo.png" class="icon"> + S<br>
+                            Buscar Servicios
+                        </p>
+                        <a href="#ssh-2-10" class="btn btn-primary">Paso 10</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-10">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/6.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Activación Agente de Autenticación</h5>
+                        
+                        <p class="card-text">
+                           Buscar y hacer click en <i>OpenSSH Authentication Agent</i>.<br>
+                           Iniciar el servicio: Darle al <img src="./imgs/play-icon.png" alt="" class="icon">
+                        </p>
+                        <a href="#ssh-2-11" class="btn btn-primary">Paso 11</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-11">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/7.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Activación del Servidor SSH </h5>
+                        
+                        <p class="card-text">
+                            Buscar y hacer click en <i>OpenSSH SSH Server</i>.<br>
+                            Iniciar el servicio: Darle al <img src="./imgs/play-icon.png" alt="" class="icon">
+                        </p>
+                        <a href="#ssh-2-12" class="btn btn-primary">Paso 12</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="ssh-2-12">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/10.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Abrir consola</h5>
+                        
+                        <p class="card-text">
+                            <img src="./imgs/win-logo.png" class="icon"> + R<br>
+                            Escribir cmd<br>
+                            Aceptar
+                        </p>
+                        <a href="#ssh-2-comprobacion" class="btn btn-primary">Comprobación final</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="" id="ssh-2-comprobacion">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/2/11.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Comprobación final</h5>
+                        
+                        <p class="card-text">
+                            Para comprobar que todo está funcionando correctamente, ejecutar netstat y comprobar que el puerto 2222  está en escucha.<br>
+                            (Si se ha especificado otro puerto, deberá escribirse ese puerto en lugar de 2222):<br>
+                            netstat -an | findstr ":<i>nuevo_puerto</i>"
+                        </p>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
 
             <!--**************************** Basicos: sudo *********************************************-->
             <div class="tab-pane fade" id="v-pills-sudo" role="tabpanel" aria-labelledby="v-pills-sudo-tab">
