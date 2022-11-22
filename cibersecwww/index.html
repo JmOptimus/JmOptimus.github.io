@@ -198,7 +198,7 @@
 
                 <li class="mb-1">
                     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-articulos" aria-expanded="false">
-                        Artículos
+                        Recomendados
                         <svg style="margin-left:1em;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
                             <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
                             <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
@@ -206,8 +206,9 @@
                     </button>
                     <div class="collapse hide" id="collapse-articulos">
                         <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab3" role="tablist" aria-orientation="vertical">
-                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-articulo-1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-articulo-1" type="button" role="tab" aria-controls="v-pills-articulo-1" aria-selected="false">Artículo 1</span></li>
-                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-articulo-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-articulo-2" type="button" role="tab" aria-controls="v-pills-articulo-2" aria-selected="false">Artículo 2</span></li>
+                            <li class="ms-5 p-3"><a href="https://www.incibe.es/"  target="_blank"  style="text-decoration: none;" class="link-dark rounded"><img src="./imgs/incibe_logo_af.png" alt="" style="width: 10em;"></a></li>
+                            <li class="ms-5 p-3"><a href="https://www.elladodelmal.com/"  target="_blank"  style="text-decoration: none;" class="link-dark rounded"><img src="./imgs/foca-logo.png" alt="" style="width: 10em;"></a></li>
+                            
                         </ul>
                     </div>
                 </li>
@@ -597,6 +598,21 @@
                         
                         <p class="card-text">
                             Repetir desde el <a href="#ssh-1-7" class="btn btn-primary">Paso 7</a><br>Esta vez con OpenSSH Server
+                        
+                            <a href="#ssh-1-comprobacion" class="btn btn-primary">Comprobación final</a>
+                        </p>
+                        
+                        </div>
+                    </div>
+
+                    <div class="card" style="" id="ssh-1-comprobacion">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/comprobacion-ssh.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Comprobación final</h5>
+                        
+                        <p class="card-text">
+                            Para comprobar que todo está funcionando correctamente, ejecutar netstat y comprobar que el puerto 22 está en escucha.<br>
+                            (<i>Si se ha modificado el puerto ssh por defecto, en lugar de 22 poner dicho puerto</i>)
                         </p>
                         
                         </div>
