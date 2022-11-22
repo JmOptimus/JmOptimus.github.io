@@ -2,30 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    
-  <!-- HTML Meta Tags -->
-  <title>Ciberseguridad</title>
-  <meta name="description" content="Recopilación de manuales y comandos relativos al mundo de la ciberseguridad.">
-
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://jmoptimus.github.io/cibersecwww/index.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Ciberseguridad">
-  <meta property="og:description" content="Recopilación de manuales y comandos relativos al mundo de la ciberseguridad.">
-  <meta property="og:image" content="https://jmoptimus.github.io/cibersecwww/imgs/web-thumbnail.png">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="jmoptimus.github.io">
-  <meta property="twitter:url" content="https://jmoptimus.github.io/cibersecwww/index.html">
-  <meta name="twitter:title" content="Ciberseguridad">
-  <meta name="twitter:description" content="Recopilación de manuales y comandos relativos al mundo de la ciberseguridad.">
-  <meta name="twitter:image" content="https://jmoptimus.github.io/cibersecwww/imgs/web-thumbnail.png">
-
-  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-        
-    
-    
+    <title>Manuales ciberseguridad</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -84,12 +61,56 @@
                         <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
                       </svg>
                     </button>
+
+
+                    <div class="collapse hide" id="collapse-manuales">
+                        
+                        <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                            <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-cortafuegos" aria-expanded="false">
+                                Cortafuegos
+                            </button>
+                            <div class="collapse hide" id="collapse-cortafuegos">
+                                <button class="btn btn-toggle align-items-center rounded collapsed ms-5" data-bs-toggle="collapse" data-bs-target="#collapse-windows-defender" aria-expanded="false">
+                                    Windows Defender <img src="/imgs/win-logo.png" alt="" class="icon">
+                                </button>
+                                <div class="collapse hide" id="collapse-windows-defender">
+                                    
+                                    <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                                        
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-agregar-regla-tab" data-bs-toggle="pill" data-bs-target="#v-pills-agregar-regla" type="button" role="tab" aria-controls="v-pills-agregar-regla" aria-selected="false">añadir una nueva regla</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-ssh" aria-expanded="false">
+                               SSH
+                            </button>
+                            <div class="collapse hide" id="collapse-ssh">
+                                <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ssh-intro-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ssh-intro" type="button" role="tab" aria-controls="v-pills-ssh-intro" aria-selected="false">Introducción</span></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-activar-ssh-tab" data-bs-toggle="pill" data-bs-target="#v-pills-activar-ssh" type="button" role="tab" aria-controls="v-pills-activar-ssh" aria-selected="false">Activar OpenSSH</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+
+
+
+
+
+                    <!--
                     <div class="collapse hide" id="collapse-manuales">
                         <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab1" role="tablist" aria-orientation="vertical">
                             <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-activar-ssh-tab" data-bs-toggle="pill" data-bs-target="#v-pills-activar-ssh" type="button" role="tab" aria-controls="v-pills-activar-ssh" aria-selected="false">Activación SSH</span> <img src="./imgs/win-logo.png" class="icon"></li>
                             <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-cortafuegos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cortafuegos" type="button" role="tab" aria-controls="v-pills-cortafuegos" aria-selected="false">Cortafuegos</span> <img src="./imgs/win-logo.png" class="icon"></li>
                         </ul>
-                    </div>
+                    </div>-->
                 </li>
 
                 <li class="border-top my-3"></li>
@@ -176,17 +197,17 @@
                 <li class="border-top my-3"></li>
 
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse2" aria-expanded="true">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#collapse-articulos" aria-expanded="false">
                         Artículos
                         <svg style="margin-left:1em;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
                             <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
                             <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
                         </svg>
                     </button>
-                    <div class="collapse hide" id="home-collapse2">
+                    <div class="collapse hide" id="collapse-articulos">
                         <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab3" role="tablist" aria-orientation="vertical">
-                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-home3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home3" type="button" role="tab" aria-controls="v-pills-home3" aria-selected="false">Artículo 1</span></li>
-                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-profile3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile3" type="button" role="tab" aria-controls="v-pills-profile3" aria-selected="false">Artículo 2</span></li>
+                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-articulo-1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-articulo-1" type="button" role="tab" aria-controls="v-pills-articulo-1" aria-selected="false">Artículo 1</span></li>
+                            <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-articulo-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-articulo-2" type="button" role="tab" aria-controls="v-pills-articulo-2" aria-selected="false">Artículo 2</span></li>
                         </ul>
                     </div>
                 </li>
@@ -209,11 +230,255 @@
         <!--**************************** Contenido *********************************************-->
         <div class="tab-content" id="v-pills-tabContent">
 
+            <!--**************************** Cortafuegos *********************************************-->
+            
+            
+            
+            <div class="tab-pane fade" id="v-pills-agregar-regla" role="tabpanel" aria-labelledby="v-pills-agregar-regla-tab">
+                <!--<img src="imgs/fire.png" alt="" style="padding:20%;width: 20em">-->
+                <div class="container" data-bs-spy="scroll" data-bs-target="#v-pills-tab" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                    <div class="card" style="" id="paso-1">
+                        <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/1.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Firewall Windows Defender</h5>
+                        
+                        <p class="card-text">
+                            <img src="./imgs/win-logo.png" class="icon"> + S<br>
+                            Buscar Firewall de Windows Defender.
+                        </p>
+                        <a href="#fw-1-2" class="btn btn-primary">Paso 2</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="fw-1-2">
+                        <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/2.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Configuración Avanzada</h5>
+                        
+                        <p class="card-text">
+                            Hacer click en Configuración avanzada.
+                        </p>
+                        <a href="#fw-1-3" class="btn btn-primary">Paso 3</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="fw-1-3">
+                        <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/3.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Reglas entrada / Reglas salida</h5>
+                        
+                        <p class="card-text">
+                            Hacer click en Reglas de entrada o Reglas de salida en función de la dirección del flujo que se desea (permitir/bloquear).
+                        </p>
+                        <a href="#fw-1-4" class="btn btn-primary">Paso 4</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="fw-1-4">
+                        <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/4.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Agregar nueva regla</h5>
+                        
+                        <p class="card-text">
+                            Hacer click en <i>Nueva regla ...</i>
+                        </p>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab3" role="tablist" aria-orientation="horizontal">
+                                    
+                    <li class="nav-item ms-3">
+                        <span class="nav-link link-dark rounded" id="v-pills-permitir-bloquear-puerto-tab" data-bs-toggle="pill" data-bs-target="#v-pills-permitir-bloquear-puerto" type="button" role="tab" aria-controls="v-pills-permitir-bloquear-puerto" aria-selected="false">(Permitir/Bloquear) Puerto</span>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <span class="nav-link link-dark rounded" id="v-pills-permitir-bloquear-ip-tab" data-bs-toggle="pill" data-bs-target="#v-pills-permitir-bloquear-ip" type="button" role="tab" aria-controls="v-pills-permitir-bloquear-ip" aria-selected="false">(Permitir/Bloquear) IP</span>
+                    </li>
+
+                    <div class="tab-content" id="v-pills-tabContent-2">
+                        
+                        <div class="tab-pane fade" id="v-pills-permitir-bloquear-puerto" role="tabpanel" aria-labelledby="v-pills-permitir-bloquear-puerto-tab">
+                            <div class="card" style="" id="fw-1-5.1.0">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/5.png" alt="Card image cap">
+                                <div class="card-body">
+                                <h5 class="card-title">Selección del tipo de regla</h5>
+                                <p class="card-text">
+                                    Seleccionar la opción <i>Puerto</i>.
+                                </p>
+                                <a href="#fw-1-5.1.1" class="btn btn-primary">Paso 5.1.1</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="" id="fw-1-5.1.1">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/6.png" alt="Card image cap">
+                                <div class="card-body">
+                                <h5 class="card-title">Selección de Protocolo y Puertos</h5>
+                                <p class="card-text">
+                                    Elegir protocolo (TCP/UDP).<br>
+                                    TCP: Protocolo más seguro (algo más lento).<br>
+                                    UDP: Protocolo no seguro (ideal para aplicaciones de tiempo real).<br><br>
+                                    Puertos locales especificos.<br>
+                                    Introducir el puerto a (permitir/bloquear).
+                                </p>
+                                <a href="#fw-1-6" class="btn btn-primary">Paso 6</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="v-pills-permitir-bloquear-ip" role="tabpanel" aria-labelledby="v-pills-permitir-bloquear-ip-tab">
+                            <div class="card" style="" id="fw-1-5.2.0">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/7.png" alt="Card image cap">
+                                <div class="card-body">
+                                <h5 class="card-title">Selección del tipo de regla</h5>
+                                
+                                <p class="card-text">
+                                    Para (permitir/bloquear) una IP o un conjunto de IPs elegir la opción <i>Personalizada</i>.
+                                </p>
+                                <a href="#fw-1-5.2.1" class="btn btn-primary">Paso 5.2.1</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="" id="fw-1-5.2.1">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/11.png" alt="Card image cap">
+                                <div class="card-body">
+                                
+                                <p class="card-text">
+                                    Especificar el programa al que afecta la regla<br>
+                                    <i>(Por defecto se aplicará a todos los programas)</i>
+                                </p>
+                                <a href="#fw-1-5.2.2" class="btn btn-primary">Paso 5.2.2</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="" id="fw-1-5.2.2">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/12.png" alt="Card image cap">
+                                <div class="card-body">
+                                <h5 class="card-title">Selección de Protocolo y Puertos</h5>
+                                <p class="card-text">
+                                    Especificar el tipo de protocolo (<i>Cualquiera por defecto</i>)<br>
+                                    Especificar un puerto si se desea.
+                                </p>
+                                <a href="#fw-1-5.2.3" class="btn btn-primary">Paso 5.2.3</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="" id="fw-1-5.2.3">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/13.png" alt="Card image cap">
+                                <div class="card-body">
+                                
+                                <p class="card-text">
+                                    Seleccionar <i>Estas direcciones IP</i>.
+                                </p>
+                                <a href="#fw-1-5.2.4" class="btn btn-primary">Paso 5.2.4</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="" id="fw-1-5.2.4">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/14.png" alt="Card image cap">
+                                <div class="card-body">
+                                
+                                <p class="card-text">
+                                    Hacer click en <i>Agregar ...</i>
+                                </p>
+                                <a href="#fw-1-5.2.5" class="btn btn-primary">Paso 5.2.5</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="" id="fw-1-5.2.5">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/16.png" alt="Card image cap">
+                                <div class="card-body">
+                                
+                                <p class="card-text">
+                                    Introducir la IP que deseamos (permitir/bloquear).<br>
+                                    Hacer click en <i>Aceptar</i>.
+                                </p>
+                                <a href="#fw-1-5.2.6" class="btn btn-primary">Paso 5.2.6</a>
+                                </div>
+                            </div>
+
+                            <div class="card" style="" id="fw-1-5.2.6">
+                                <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/17.png" alt="Card image cap">
+                                <div class="card-body">
+                                
+                                <p class="card-text">
+                                    Si se desea agregar otra IP, volver al
+                                    <a href="#fw-1-5.2.4" class="btn btn-primary">Paso 5.2.4</a>
+                                </p>
+                                En caso contrario ir al 
+                                <a href="#fw-1-6" class="btn btn-primary">Paso 6</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
+
+                    <!-- -->
+            
+                    <div class="card" style="" id="fw-1-6">
+                        <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/8.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Selección de la Acción</h5>
+                        <p class="card-text">
+                            Elegir permitir o bloquear la conexión, según convenga.
+                        </p>
+                        <a href="#fw-1-7" class="btn btn-primary">Paso 7</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="fw-1-7">
+                        <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/9.png" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">Selección del Perfil</h5>
+                        
+                        <p class="card-text">
+                           Especificar dónde se aplica la regla (Dominio, Privado, Público).
+                        </p>
+                        <a href="#fw-1-8" class="btn btn-primary">Último paso</a>
+                        </div>
+                    </div>
+            
+                    <div class="card" style="" id="fw-1-8">
+                        <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/10.png" alt="Card image cap">
+                        <div class="card-body"> 
+                            <h5 class="card-title">Nombramiento de la regla</h5>
+                            <p class="card-text">
+                                Nombrar la regla.<br>
+                                Escribir una descripción opcional.<br>
+                                Hacer click en Finalizar.
+                            </p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <!--**************************** Intro SSH *********************************************-->
+            <div class="tab-pane fade" id="v-pills-ssh-intro" role="tabpanel" aria-labelledby="v-pills-ssh-intro-tab">
+                <div class="container mx mt-5">
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                En esta sección encontraremos manuales relacionados con SSH (<i>Secure Shell</i>).<br>
+
+                                <p>
+                                    Nos permitirá conectarnos con hosts de manera remota y segura.
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
             <!--**************************** Activacion SSH *********************************************-->
             <div class="tab-pane fade" id="v-pills-activar-ssh" role="tabpanel" aria-labelledby="v-pills-activar-ssh-tab">
                 <div class="container" data-bs-spy="scroll" data-bs-target="#v-pills-tab" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                     <div class="card" style="" id="paso-1">
-                        <img class="card-img-top" src="./imgs/Paso-1.png" alt="Card image cap">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/1.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Aplicaciones predeterminadas</h5>
                         
@@ -221,59 +486,59 @@
                             <img src="./imgs/win-logo.png" class="icon"> + S<br>
                             Buscar Aplicaciones predeterminadas.
                         </p>
-                        <a href="#paso-2" class="btn btn-primary">Paso 2</a>
+                        <a href="#ssh-1-2" class="btn btn-primary">Paso 2</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-2">
-                        <img class="card-img-top" src="./imgs/Paso-2.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-2">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/2.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Aplicaciones y características</h5>
                         
                         <p class="card-text">
                             Hacer click en Aplicaciones y características.
                         </p>
-                        <a href="#paso-3" class="btn btn-primary">Paso 3</a>
+                        <a href="#ssh-1-3" class="btn btn-primary">Paso 3</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-3">
-                        <img class="card-img-top" src="./imgs/Paso-3.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-3">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/3.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Características opcionales</h5>
                         
                         <p class="card-text">
                             Hacer click en Características opcionales.
                         </p>
-                        <a href="#paso-4" class="btn btn-primary">Paso 4</a>
+                        <a href="#ssh-1-4" class="btn btn-primary">Paso 4</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-4">
-                        <img class="card-img-top" src="./imgs/Paso-4.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-4">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/4.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Agregar una característica</h5>
                         
                         <p class="card-text">
                             Agregar una característica.
                         </p>
-                        <a href="#paso-5" class="btn btn-primary">Paso 5</a>
+                        <a href="#ssh-1-5" class="btn btn-primary">Paso 5</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-5">
-                        <img class="card-img-top" src="./imgs/Paso-5.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-5">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/5.png" alt="Card image cap">
                         <div class="card-body">
                         
                         <p class="card-text">
                             Buscar Servidor OpenSSH.
                         </p>
-                        <a href="#paso-6" class="btn btn-primary">Paso 6</a>
+                        <a href="#ssh-1-6" class="btn btn-primary">Paso 6</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-6">
-                        <img class="card-img-top" src="./imgs/Paso-6.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-6">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/6.png" alt="Card image cap">
                         <div class="card-body">
                 
                         
@@ -281,12 +546,12 @@
                             <img src="./imgs/win-logo.png" class="icon"> + S<br>
                             Buscar Servicios
                         </p>
-                        <a href="#paso-7" class="btn btn-primary">Paso 7</a>
+                        <a href="#ssh-1-7" class="btn btn-primary">Paso 7</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-7">
-                        <img class="card-img-top" src="./imgs/Paso-7.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-7">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/7.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Configuración Agente de Autenticación / Servidor OpenSSH</h5>
                         
@@ -295,12 +560,12 @@
                             Hacer click derecho<br>
                             Propiedades
                         </p>
-                        <a href="#paso-8" class="btn btn-primary">Paso 8</a>
+                        <a href="#ssh-1-8" class="btn btn-primary">Paso 8</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-8">
-                        <img class="card-img-top" src="./imgs/Paso-8.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-8">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/8.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Tipo de inicio </h5>
                         
@@ -308,12 +573,12 @@
                             Manual: Cuando se reinicie el ordenador, el servicio estará desactivado.<br>
                             Automático: El servicio se iniciará cada vez que se inicie el ordenador.
                         </p>
-                        <a href="#paso-9" class="btn btn-primary">Paso 9</a>
+                        <a href="#ssh-1-9" class="btn btn-primary">Paso 9</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-9">
-                        <img class="card-img-top" src="./imgs/Paso-9.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-9">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/9.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Iniciar servicio</h5>
                         
@@ -321,29 +586,22 @@
                             Estando seleccionado OpenSSH Authentication Agent / OpenSSH SSH Server<br>
                             Hacer click en <img src="./imgs/play-icon.png" class="icon">
                         </p>
-                        <a href="#paso-10" class="btn btn-primary">Paso 10</a>
+                        <a href="#ssh-1-10" class="btn btn-primary">Paso 10</a>
                         </div>
                     </div>
             
-                    <div class="card" style="" id="paso-10">
-                        <img class="card-img-top" src="./imgs/Paso-10.png" alt="Card image cap">
+                    <div class="card" style="" id="ssh-1-10">
+                        <img class="card-img-top" src="./imgs/manuales/ssh/1/10.png" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">Configuración servidor OpenSSH</h5>
                         
                         <p class="card-text">
-                            Repetir desde el Paso-7.<br>Esta vez con OpenSSH Server
-                            
+                            Repetir desde el <a href="#ssh-1-7" class="btn btn-primary">Paso 7</a><br>Esta vez con OpenSSH Server
                         </p>
-                        <a href="#paso-7" class="btn btn-primary">Paso 7</a>
+                        
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-            <!--**************************** Cortafuegos *********************************************-->
-            <div class="tab-pane fade" id="v-pills-cortafuegos" role="tabpanel" aria-labelledby="v-pills-cortafuegos-tab">
-                <img src="imgs/fire.png" alt="" style="padding:20%;width: 20em">
             </div>
 
             <!--**************************** Basicos: sudo *********************************************-->
@@ -721,15 +979,7 @@
                     <div class="card" style="width: auto">
                         <div class="card-body bg-dark">
                             <p class="card-text" style="color:greenyellow">
-                                cat security-log.txt | grep warning <img src="./imgs/linux-logo-color.png" alt="" class="icon">
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: auto">
-                        <div class="card-body bg-dark">
-                            <p class="card-text" style="color:greenyellow">
-                                cat security-log.txt | findstr warning <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                                cat security-log.txt | grep warning <img src="./imgs/win-logo-white.png" alt="" class="icon"><img src="./imgs/linux-logo-color.png" alt="" class="icon">
                             </p>
                         </div>
                     </div>
