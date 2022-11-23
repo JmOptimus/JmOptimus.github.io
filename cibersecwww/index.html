@@ -97,14 +97,38 @@
                                
                             </button>
                             <div class="collapse hide" id="collapse-cortafuegos">
+                                
+                                <!-- Windows Defender -->
                                 <button class="btn btn-toggle align-items-center rounded collapsed ms-5" data-bs-toggle="collapse" data-bs-target="#collapse-windows-defender" aria-expanded="false">
-                                    Windows Defender <img src="/imgs/win-logo.png" alt="" class="icon">
+                                    Windows Defender <img src="./imgs/win-logo.png" alt="" class="icon">
                                 </button>
                                 <div class="collapse hide" id="collapse-windows-defender">
                                     
                                     <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
                                         
-                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-agregar-regla-tab" data-bs-toggle="pill" data-bs-target="#v-pills-agregar-regla" type="button" role="tab" aria-controls="v-pills-agregar-regla" aria-selected="false">Añadir una nueva regla</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-agregar-regla-tab" data-bs-toggle="pill" data-bs-target="#v-pills-agregar-regla" type="button" role="tab" aria-controls="v-pills-agregar-regla" aria-selected="false">Añadir una nueva regla</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- UFW -->
+
+                                <button class="btn btn-toggle align-items-center rounded collapsed ms-5" data-bs-toggle="collapse" data-bs-target="#collapse-ufw" aria-expanded="false">
+                                Uncomplicated Firewall    <img src="./imgs/linux-logo.svg" alt="" class="icon">
+                                </button>
+                                
+                               
+                                <div class="collapse hide" id="collapse-ufw">
+                                    
+                                    <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                                        
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-instalacion-ufw-tab" data-bs-toggle="pill" data-bs-target="#v-pills-instalacion-ufw" type="button" role="tab" aria-controls="v-pills-instalacion-ufw" aria-selected="false">Instalación</span></li>
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-activacion-desactivacion-ufw-tab" data-bs-toggle="pill" data-bs-target="#v-pills-activacion-desactivacion-ufw" type="button" role="tab" aria-controls="v-pills-activacion-desactivacion-ufw" aria-selected="false">Activación/Desactivación</span></li>
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-mostrar-reglas-ufw-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mostrar-reglas-ufw" type="button" role="tab" aria-controls="v-pills-mostrar-reglas-ufw" aria-selected="false">Mostrar reglas</span></li>
+                                        
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-agregar-nueva-regla-ufw-tab" data-bs-toggle="pill" data-bs-target="#v-pills-agregar-nueva-regla-ufw" type="button" role="tab" aria-controls="v-pills-agregar-nueva-regla-ufw" aria-selected="false">Añadir una nueva regla</span></li>
+                                        <li class="nav-item ms-5"><span class="nav-link link-dark rounded" id="v-pills-eliminar-regla-ufw-tab" data-bs-toggle="pill" data-bs-target="#v-pills-eliminar-regla-ufw" type="button" role="tab" aria-controls="v-pills-eliminar-regla-ufw" aria-selected="false">Eliminar una regla</span></li>
+                                    
+                                        
                                     </ul>
                                 </div>
 
@@ -414,7 +438,7 @@
             <div class="tab-pane fade" id="v-pills-agregar-regla" role="tabpanel" aria-labelledby="v-pills-agregar-regla-tab">
 
 
-               
+               <!-- Windows Defender -->
                 <div class="container" data-bs-spy="scroll" data-bs-target="#v-pills-tab" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                     <div class="card" style="" id="paso-1">
                         <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/1.png" alt="Card image cap">
@@ -633,6 +657,185 @@
                     
                 </div>
             </div>
+
+
+            <!--**************************** Uncomplicated Firewall *********************************************-->
+            
+            <!-- Instalación-->
+            <div class="tab-pane fade" id="v-pills-instalacion-ufw" role="tabpanel" aria-labelledby="v-pills-instalacion-ufw-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                            Para instalar UFW usaremos el gestor de paquetes APT.<br>
+                            Se emplea sudo ya que se necesitan permisos de root.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo apt install ufw -y <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activación/Desactivación-->
+            <div class="tab-pane fade" id="v-pills-activacion-desactivacion-ufw" role="tabpanel" aria-labelledby="v-pills-activacion-desactivacion-ufw-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Activación del cortafuegos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw enable <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Desactivación del cortafuegos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw disable <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Añadir nueva regla-->
+            <div class="tab-pane fade" id="v-pills-agregar-nueva-regla-ufw" role="tabpanel" aria-labelledby="v-pills-agregar-nueva-regla-ufw-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Permitir el tráfico proveniente de un determinado host.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw allow from 10.1.4.22 <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Bloquear el tráfico proveniente de un determinado host.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw deny from 142.250.185.4 <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Posible defensa contra un ataque de <b>denegación de servicio (DoS)</b>.<br><br>
+                                Supongamos que sospechamos poder sufrir un ataque DoS al puerto 80.<br>
+                                Si se producen más de seis intentos en 30 segundos, bloqueará el tráfico.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw limit 80/tcp <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Mostrar reglas-->
+            <div class="tab-pane fade" id="v-pills-mostrar-reglas-ufw" role="tabpanel" aria-labelledby="v-pills-mostrar-reglas-ufw-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Muestra las reglas activas en un momento dado.<b>
+                                El número de la izquierda las identifica (será útil a la hora de querer eliminar una regla).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw status numbered <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Eliminar regla-->
+            <div class="tab-pane fade" id="v-pills-eliminar-regla-ufw" role="tabpanel" aria-labelledby="v-pills-eliminar-regla-ufw-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Elimina una regla usando el identificador que se muestra tras ejecutar <i>ufw status numbered</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw delete 6 <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text small">
+                                <i>
+                                    Eliminaría la regla identificada por el número 6.
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 
             <!--**************************** Intro SSH *********************************************-->
             <div class="tab-pane fade" id="v-pills-ssh-intro" role="tabpanel" aria-labelledby="v-pills-ssh-intro-tab">
@@ -1783,6 +1986,7 @@
                         <div class="card-body">
                             <p class="card-text">
                                Muestra, actualizándose en tiempo real, los procesos en ejecución.
+                               Para salir pulsar Ctrl + C.
                             </p>
                         </div>
                     </div>
