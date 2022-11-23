@@ -76,8 +76,25 @@
                     <div class="collapse hide" id="collapse-manuales">
                         
                         <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                            <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-programar-tareas" aria-expanded="false">
+                                Programar tareas
+                            </button>
+                            <div class="collapse hide" id="collapse-programar-tareas">
+                                
+                                <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-intro-programar-tareas-tab" data-bs-toggle="pill" data-bs-target="#v-pills-intro-programar-tareas" type="button" role="tab" aria-controls="v-pills-intro-programar-tareas" aria-selected="false">Introducción</span></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-programar-tareas-tab" data-bs-toggle="pill" data-bs-target="#v-pills-programar-tareas" type="button" role="tab" aria-controls="v-pills-programar-tareas" aria-selected="false">Windows Scheduler (GUI)</span> <img src="./imgs/win-logo.png" class="icon"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-programar-tareas-terminal-tab" data-bs-toggle="pill" data-bs-target="#v-pills-programar-tareas-terminal" type="button" role="tab" aria-controls="v-pills-programar-tareas-terminal" aria-selected="false">Windows Scheduler  <svg style="margin-left:1em" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-terminal-fill" viewBox="0 0 16 16">
+                                        <path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm9.5 5.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm-6.354-.354a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146z"/>
+                                    </svg></span></li>
+                                </ul>
+
+                            </div>
+                            
+                            
                             <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-cortafuegos" aria-expanded="false">
-                                Cortafuegos
+                                Cortafuegos       
+                               
                             </button>
                             <div class="collapse hide" id="collapse-cortafuegos">
                                 <button class="btn btn-toggle align-items-center rounded collapsed ms-5" data-bs-toggle="collapse" data-bs-target="#collapse-windows-defender" aria-expanded="false">
@@ -249,12 +266,140 @@
         <!--**************************** Contenido *********************************************-->
         <div class="tab-content" id="v-pills-tabContent">
 
+
+
+
+
+        <!--**************************** Intro Programar tarea *********************************************-->
+        <div class="tab-pane fade" id="v-pills-intro-programar-tareas" role="tabpanel" aria-labelledby="v-pills-intro-programar-tareas-tab">
+            <div class="container mx mt-5">
+                <div class="card" style="width: auto">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Programar tareas puede ser muy práctico para automatizar procesos.<br>
+                            Desde realizar un backup periódico hasta ejecutar scripts complejos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**************************** Programar tarea *********************************************-->    
+        <div class="tab-pane fade" id="v-pills-programar-tareas" role="tabpanel" aria-labelledby="v-pills-programar-tareas-tab">
+                <div class="card" style="" id="ssh-2-1">
+                    <img class="card-img-top" src="./imgs/manuales/programar_tareas/1/1.png" alt="Card image cap">
+                    <div class="card-body">
+                    
+                    <p class="card-text">
+                        <img src="./imgs/win-logo.png" class="icon"> + R<br>
+                        Escribir taskschd.msc<br>
+                        Aceptar.
+                    </p>
+                    <a href="#programar-tareas-1-2" class="btn btn-primary">Paso 2</a>
+                    </div>
+                </div>
+
+                <div class="card" style="" id="programar-tareas-1-2">
+                    <img class="card-img-top" src="./imgs/manuales/programar_tareas/1/3.png" alt="Card image cap">
+                    <div class="card-body">
+                    
+                    <p class="card-text">
+                        <img src="./imgs/win-logo.png" class="icon"> + R<br>
+                        Hacer click en Acción -> Crear tarea básica...
+                    </p>
+                    <a href="#programar-tareas-1-3" class="btn btn-primary">Paso 3</a>
+                    </div>
+                </div>
+
+                <div class="card" style="" id="programar-tareas-1-3">
+                    <img class="card-img-top" src="./imgs/manuales/programar_tareas/1/5.png" alt="Card image cap">
+                    <div class="card-body">
+                    
+                    <p class="card-text">
+                        Ponerle un nombre a la tarea.<br>
+                        Opcionalmente escribir una descripción.
+                    </p>
+                    <a href="#programar-tareas-1-4" class="btn btn-primary">Paso 4</a>
+                    </div>
+                </div>
+
+                <div class="card" style="" id="programar-tareas-1-4">
+                    <img class="card-img-top" src="./imgs/manuales/programar_tareas/1/6.png" alt="Card image cap">
+                    <div class="card-body">
+                    
+                    <p class="card-text">
+                       Establecer la periodicidad de la tarea.
+                    </p>
+                    <a href="#programar-tareas-1-5" class="btn btn-primary">Paso 5</a>
+                    </div>
+                </div>
+
+                <div class="card" style="" id="programar-tareas-1-5">
+                    <img class="card-img-top" src="./imgs/manuales/programar_tareas/1/7.png" alt="Card image cap">
+                    <div class="card-body">
+                    
+                    <p class="card-text">
+                       Establecer la hora de ejecución.
+                    </p>
+                    <a href="#programar-tareas-1-6" class="btn btn-primary">Paso 6</a>
+                    </div>
+                </div>
+
+                <div class="card" style="" id="programar-tareas-1-6">
+                    <img class="card-img-top" src="./imgs/manuales/programar_tareas/1/8.png" alt="Card image cap">
+                    <div class="card-body">
+                    
+                    <p class="card-text">
+                       Hacer click en iniciar un programa (o script).
+                    </p>
+                    <a href="#programar-tareas-1-7" class="btn btn-primary">Paso 7</a>
+                    </div>
+                </div>
+
+                <div class="card" style="" id="programar-tareas-1-7">
+                    <img class="card-img-top" src="./imgs/manuales/programar_tareas/1/9.png" alt="Card image cap">
+                    <div class="card-body">
+                    
+                    <p class="card-text">
+                       Hacer click en Examinar...<br>
+                       Seleccionar el script a ejecutar.
+                    </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--**************************** Programar Tareas Terminal *********************************************-->
+            <div class="tab-pane fade mt-5" id="v-pills-programar-tareas-terminal" role="tabpanel" aria-labelledby="v-pills-programar-tareas-terminal-tab">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Con una sola línea en la consola somos capaces de programar una tarea.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-body bg-dark">
+                        <p class="card-text" style="color:greenyellow">
+                            schtasks /create /tn calculate /tr calc /sc weekly /d MON /st 06:05 /ru "System" <img src="./imgs/win-logo-white.png" alt="" class="icon">
+                        </p>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Se abrirá la calculadora todos los lunes a las 6:05 ejecutándose como el usuario System.
+                            </p>
+                        </div>
+                    </div>
+
+            </div>
             <!--**************************** Cortafuegos *********************************************-->
             
-            
-            
             <div class="tab-pane fade" id="v-pills-agregar-regla" role="tabpanel" aria-labelledby="v-pills-agregar-regla-tab">
-                <!--<img src="imgs/fire.png" alt="" style="padding:20%;width: 20em">-->
+
+
+               
                 <div class="container" data-bs-spy="scroll" data-bs-target="#v-pills-tab" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                     <div class="card" style="" id="paso-1">
                         <img class="card-img-top" src="./imgs/manuales/cortafuegos/1/1.png" alt="Card image cap">
