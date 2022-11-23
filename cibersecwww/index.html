@@ -215,6 +215,21 @@
                                     <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ssh-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ssh" type="button" role="tab" aria-controls="v-pills-ssh" aria-selected="false">ssh</span> <img src="./imgs/win-logo.png" class="icon"><img src="./imgs/linux-logo.svg" class="icon"></li>
                                 </ul>
                             </div>
+
+                            <button class="btn btn-toggle align-items-center rounded collapsed ms-3" data-bs-toggle="collapse" data-bs-target="#collapse-procesos" aria-expanded="false">
+                                Procesos
+                            </button>
+                            <div class="collapse hide" id="collapse-procesos">
+                                
+                                <ul class="nav nav-pills d-flex flex-column btn-toggle-nav list-unstyled fw-normal pb-1 small" id="v-pills-tab2" role="tablist" aria-orientation="vertical">
+                                    
+                                    
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-ps-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ps" type="button" role="tab" aria-controls="v-pills-ps" aria-selected="false">ps</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-top-tab" data-bs-toggle="pill" data-bs-target="#v-pills-top" type="button" role="tab" aria-controls="v-pills-top" aria-selected="false">top</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    <li class="nav-item ms-3"><span class="nav-link link-dark rounded" id="v-pills-kill-tab" data-bs-toggle="pill" data-bs-target="#v-pills-kill" type="button" role="tab" aria-controls="v-pills-kill" aria-selected="false">kill</span> <img src="./imgs/linux-logo.svg" class="icon"></li>
+                                    
+                                </ul>
+                            </div>
                         </ul>
                     </div>
                 </li>
@@ -1675,6 +1690,218 @@
                 </div>
 
             </div>
+
+            <!--Procesos: ps-->
+            <div class="tab-pane fade" id="v-pills-ps" role="tabpanel" aria-labelledby="v-pills-ps-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Toma una instantánea de los procesos que se están ejecutando en ese mismo momento.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Caso 1-->
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p><b>Caso 1: Listar todos los procesos en ejecución</b></p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ps -aux  <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Caso 2-->
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p><b>Caso 2: Procesos ejecutados por un usuario dado</b></p>
+                            <p class="card-text">
+                               ps -u <i>usuario</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ps -u root <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Listaría todos los procesos ejecutados como root.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Caso 3-->
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p><b>Caso 3: Tomar instantánea de uno o varios procesos</b></p>
+                            <p>Se necesita conocer sus respectivos PIDs y separarlos por comas.</p>
+                            <p class="card-text">
+                               ps -p <i>PID_proc_1 [,PID_proc_2, PID_proc_3...]</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                ps -p 3,8321,456 <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Listaría los procesos con PIDs 3, 8321 y 456.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--Procesos: top-->
+            <div class="tab-pane fade" id="v-pills-top" role="tabpanel" aria-labelledby="v-pills-top-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Muestra, actualizándose en tiempo real, los procesos en ejecución.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Caso 1-->
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p><b>Caso 1: Mostrar todos los procesos</b></p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                top  <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Caso 2-->
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p><b>Caso 2: Monitorizar procesos ejecutados por un usuario en concreto</b></p>
+                            <p class="card-text">
+                               top -u <i>usuario</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                top -u juan <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Mostraría todos los procesos ejecutados como usuario juan.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Caso 3-->
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p><b>Caso 3: Mostrar información de uno o varios procesos</b></p>
+                            <p>Se necesita conocer sus respectivos PIDs y separarlos por comas.</p>
+                            <p class="card-text">
+                               top -p <i>PID_proc_1 [,PID_proc_2, PID_proc_3...]</i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                top -p 1,4,69 <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Mostraría los procesos con PIDs 1, 4 y 69.</i>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--Procesos: kill-->
+            <div class="tab-pane fade" id="v-pills-kill" role="tabpanel" aria-labelledby="v-pills-kill-tab">
+                <div class="container mx mt-5">
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                               Termina la ejecución (mata) al proceso especificado.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Caso 1-->
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p><b>Matar a uno o varios procesos.</b></p>
+                            <p>Es necesario conocer sus PIDs previamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                kill -9 3421,34  <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <i class="small">Mataría los procesos con PID 3421 y 34.<br>
+                                El argumento -9 se aplica en casos de emergencia, cuando se requiere una terminación inmediata.
+                                </i><br>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
