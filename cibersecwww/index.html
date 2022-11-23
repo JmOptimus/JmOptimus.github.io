@@ -660,9 +660,9 @@
 
 
             <!--**************************** Uncomplicated Firewall *********************************************-->
-            
+             
             <!-- Instalación-->
-            <div class="tab-pane fade" id="v-pills-instalacion-ufw" role="tabpanel" aria-labelledby="v-pills-instalacion-ufw-tab">
+             <div class="tab-pane fade" id="v-pills-instalacion-ufw" role="tabpanel" aria-labelledby="v-pills-instalacion-ufw-tab">
                 <div class="container mx mt-5">
 
                     <div class="card" style="width: auto">
@@ -722,6 +722,55 @@
                 </div>
             </div>
 
+
+
+            <div class="tab-pane fade" id="v-pills-mostrar-reglas-ufw" role="tabpanel" aria-labelledby="v-pills-mostrar-reglas-ufw-tab">
+                <div class="container mx mt-5">
+                <div class="card" style="width: auto">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Muestra las reglas activas en un momento dado.
+                            El número de la izquierda las identifica (será útil a la hora de querer eliminar una regla).
+                        </p>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw status numbered <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Mostrar reglas-->
+            <!--
+            
+
+            <div class="container mx">
+                    <div class="card" style="width: auto">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Muestra las reglas activas en un momento dado.<b>
+                                El número de la izquierda las identifica (será útil a la hora de querer eliminar una regla).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: auto">
+                        <div class="card-body bg-dark">
+                            <p class="card-text" style="color:greenyellow">
+                                sudo ufw status numbered <img src="./imgs/linux-logo-color.png" alt="" class="icon">
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+        -->
+
+            
+
             <!-- Añadir nueva regla-->
             <div class="tab-pane fade" id="v-pills-agregar-nueva-regla-ufw" role="tabpanel" aria-labelledby="v-pills-agregar-nueva-regla-ufw-tab">
                 <div class="container mx mt-5">
@@ -776,30 +825,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Mostrar reglas-->
-            <div class="tab-pane fade" id="v-pills-mostrar-reglas-ufw" role="tabpanel" aria-labelledby="v-pills-mostrar-reglas-ufw-tab">
-                <div class="container mx mt-5">
-
-                    <div class="card" style="width: auto">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Muestra las reglas activas en un momento dado.<b>
-                                El número de la izquierda las identifica (será útil a la hora de querer eliminar una regla).
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="width: auto">
-                        <div class="card-body bg-dark">
-                            <p class="card-text" style="color:greenyellow">
-                                sudo ufw status numbered <img src="./imgs/linux-logo-color.png" alt="" class="icon">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Eliminar regla-->
