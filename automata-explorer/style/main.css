@@ -1,0 +1,260 @@
+@font-face {
+    font-family: PirateFont;
+    src: url("../fonts/Rapscallion/Rapscallion-q341.ttf");
+}
+
+@font-face {
+    font-family: NotoSans;
+    src: url("../fonts/Noto_Sans_TC/NotoSansTC-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: RobotoFont;
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+@keyframes compass-shine {
+    0% {color: #daa520;opacity:0.6}
+    75% {color: #ffb700;opacity:1}
+    100% {color: #daa520;opacity:0.5}
+}
+
+@keyframes shine-1 {
+    0% {color: white;}
+    75% {color: gold;}
+    100% {color: white;}
+}
+
+@keyframes shine-2 {
+    0% {color: white;}
+    75% {color: silver;}
+    100% {color: white;}
+}
+
+body{
+    background-color: #1a1110 ;
+}
+
+h1{
+    text-align: center;
+    font-family: PirateFont;
+    font-size: 8em;
+    color:aliceblue;
+}
+
+#outer-ring{
+    --x: 500px;
+    --y: 500px;
+    height: 980px;
+    width: 980px;
+    background-color: rgb(0, 36, 125);
+    position: relative;
+    top: 0px;
+    left: 150px;
+    background-image: radial-gradient(circle at var(--x) var(--y),red,blue);
+}
+
+#compass-ring {
+    height: 880px;
+    width: 880px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    rotate: var(--rot); 
+}
+
+#canvas-container {
+    height: 780px;
+    width: 780px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#canvas-container>canvas{
+    cursor:crosshair;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.5px;
+    left:1.5px;
+}
+
+.circle{
+    border-radius: 50%;
+    border-style:outset;
+    border:3px solid #1F1F1F;
+}
+
+.compass-direction{
+    font-family: PirateFont;
+    font-size: larger;
+    animation-name: compass-shine;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#north{
+    position:absolute;
+    top:1.5%;
+    left:50%;
+}
+
+#west{
+    position:absolute;
+    top:50%;
+    left:1.5%;
+}
+
+#east{
+    position:absolute;
+    top:50%;
+    left:97%;
+}
+
+#south{
+    position:absolute;
+    top:96%;
+    left:50%;
+}
+
+label, .form-label{
+    color:whitesmoke;
+    font-family: RobotoFont;
+    font-weight: bold;
+}
+
+.icon{
+    position: relative;
+    color: rgba(255, 254, 254, 0.824);
+    transition: 0.5s;
+    top: 0px;
+    left: 90%;
+    cursor:help;
+    z-index: 2;
+    width: 10%;
+}
+
+.icon:hover{
+    color: rgb(255, 254, 254);
+    
+}
+
+.icon-off{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.icon-on{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#help-tooltip{
+    font-family: PirateFont;
+    font-size: 2em;
+    position: relative;
+    top: 0%;
+    left:-8em;
+    width: 11em;
+}
+
+#keys-1{
+    animation-name: shine-1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-out;
+}
+
+#keys-2{
+    animation-name: shine-2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-out;
+}
+
+img{
+    width:5em;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+img:hover{
+    opacity:1;
+    transition:1s;
+}
+
+.form-control,.form-select{
+    color: aliceblue;
+    background-color: #1F1F1F;
+    font-family: RobotFont;
+    font-weight: bolr;
+    text-align:center;
+}
+
+.form-control:focus{
+    color: aliceblue;
+    background-color: #313131;
+}
+
+#horizontal-line{
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top:50%;
+    left:10%;
+    background-color: white;
+    z-index: -1;
+}
+.translation-label{
+    position: absolute;
+    color:white;    
+}
+
+.vertical-label{
+    left: 93%;
+    top:-30px;
+}
+
+.horizontal-label{
+    left: 95%;
+}
+
+.value-label{
+    position: absolute;
+    color:white;
+}
+
+.vertical-value{
+    left: 90%;
+    top: 5em;
+    rotate: 90deg;
+    width: 10em;
+}
+
+.horizontal-value{
+    left: 95%;
+    top: -30px;
+}
+
+#vertical-line{
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top:40%;
+    left:-0%;
+    background-color: white;
+    z-index: -1;
+    rotate: -90deg;
+}
+
+.footer{
+    color:white;
+    background-color: hsl(0, 0%, 11%);
+}
+
+.compass-chinese-characters{
+    font-family: NotoSans;
+    font-weight: 900;
+    color: goldenrod;
+}
