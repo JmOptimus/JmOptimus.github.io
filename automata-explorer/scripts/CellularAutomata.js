@@ -33,7 +33,7 @@ class CellularAutomata{
         if(index>=0 && index<this.TOTAL_PROBLEMS){
             this.outputs = Number(index).toString(2).padStart(2**this.neighbourhood_size,"0").split('').reverse().join('');;
         }else{
-            alert("Given an initial state, there are "+this.TOTAL_PROBLEMS+" problems in total.");
+            //alert("Given an initial state, there are "+this.TOTAL_PROBLEMS+" problems in total.");
             return false;
         }
         
