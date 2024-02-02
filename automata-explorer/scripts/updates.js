@@ -15,7 +15,6 @@ function updateProblem(){
 }
 
 function updateProblemID(new_id){
-    console.log("updating ID");
     document.getElementById('problem-id').value = 0;
 }
 
