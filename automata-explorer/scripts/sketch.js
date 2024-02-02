@@ -49,17 +49,18 @@ function draw(){
     noStroke();
     fill(DOT_COLOR);
 
+    const tail_length = (neighbourhood_size-1)/2;
+    let offset = tail_length*(density+depth-1);
+
     for(let i=0;i<rows.length;i++){
         let row = rows[i];
-
-        const n = (neighbourhood_size-1)/2;
-        let a = ((density+depth-1)*n)-n;
-
+        
         for(let j=0;j<density;j++){
-            if(row[a+j-i] === '1'){
+            if(row[j+offset] === '1'){
                 ellipse((j)*GAP_SIZE,(i-depth)*GAP_SIZE,DOT_SIZE);
             }
         }
+        offset -= tail_length;
     }
 }
 
@@ -79,6 +80,5 @@ function testAutomata(ns,prob_id){
         s+='\n';
     }
     console.log(s);
-    
 }
 
