@@ -91,7 +91,7 @@ document.getElementById('neighbourhood-size').addEventListener('input', function
 });
 
 document.getElementById('problem-id').addEventListener('input', function (evt) {
-    //alert("chahahahanged Problem");
+    resetMovement();
     updateProblem();
     refreshAutomata();
 });
