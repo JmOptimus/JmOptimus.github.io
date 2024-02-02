@@ -84,7 +84,6 @@ function checkKeyEvents(){
 }
 
 document.getElementById('neighbourhood-size').addEventListener('input', function (evt) {
-    //alert("chahahahanged");
     updateProblemID(this.value);
     refreshAutomata();
     transformed = true;
