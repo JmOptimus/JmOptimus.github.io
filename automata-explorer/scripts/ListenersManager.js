@@ -90,7 +90,7 @@ document.getElementById('neighbourhood-size').addEventListener('input', function
     transformed = true;
 });
 
-document.getElementById('problem-id').addEventListener('input', function (evt) {
+document.getElementById('problem-id').addEventListener('change', function (evt) {
     resetMovement();
     updateProblem();
     refreshAutomata();
