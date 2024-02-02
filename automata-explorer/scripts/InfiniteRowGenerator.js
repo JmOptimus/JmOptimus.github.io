@@ -35,13 +35,4 @@ class InfiniteRowGenerator{
             return this.central_chunk[mid_index+x];
         }
     }
-
-
-    test(){
-        let s = '';
-        for(let i=-50;i<50;i++){
-            s += this.f(i);
-        }
-        console.log(s);
-    }
 }
