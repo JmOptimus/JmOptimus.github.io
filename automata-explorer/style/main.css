@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: PirateFont;
     src: url("../fonts/Rapscallion/Rapscallion-q341.ttf");
@@ -11,6 +12,16 @@
 @font-face {
     font-family: RobotoFont;
     src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+
+@keyframes blinker {
+  50%{
+    opacity: 0;
+  }
+}
+#behind-the-scenes-link{
+  animation: blinker 1s linear infinite;
 }
 
 @keyframes compass-shine {
