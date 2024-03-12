@@ -1,8 +1,6 @@
 let museum_elem;
 
 function setup(){
-
-    
     
     var myCanvas = createCanvas(windowWidth,windowHeight,WEBGL);
     resizeFrame();
@@ -11,21 +9,6 @@ function setup(){
     camera(-230, -250, ((height/2) / tan(PI/6))+1300, -230, -250, 0, 0, 1, 0)
 }
 
-
-function resizeFrame(){
-    let factor = windowHeight/1151;
-    let frameHeight = factor*569;
-    let frameWidth = factor*431;
-
-    let ratio = frameWidth/frameHeight;
-
-    document.getElementById("frame").style.top= (frameHeight*0.25)+"px"; 
-    document.getElementById("frame").style.left= (frameWidth*1.97)+"px";
-    resizeCanvas(frameWidth,frameHeight);
-}
-function windowResized() {
-    resizeFrame();
-}
 
 const colors = ["#6441a77f","#728dfc7f","#70ffc27f","#e63b687f"];
 let angle = 0;
