@@ -3,7 +3,6 @@ let museum_elem;
 function setup(){
     
     var myCanvas = createCanvas(windowWidth,windowHeight,WEBGL);
-    resizeFrame();
     myCanvas.parent("frame");
     
     camera(-230, -250, ((height/2) / tan(PI/6))+1300, -230, -250, 0, 0, 1, 0)
