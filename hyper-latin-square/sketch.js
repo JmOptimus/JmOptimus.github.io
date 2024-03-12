@@ -185,6 +185,10 @@ function draw(){
             fill(colors[latin_grids[2][2][2]-1]);
         }else if(i==5){
             fill(colors[latin_grids[2][2][3]-1]);
+        }else if(i==7){
+            fill(colors[latin_grids[2][3][2]-1]);
+        }else if(i==6){
+            fill(colors[latin_grids[2][3][3]-1]);
         }if(i==3){
             fill(colors[latin_grids[3][2][2]-1]);
         }else if(i==2){
