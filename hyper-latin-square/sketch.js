@@ -4,7 +4,7 @@ function setup(){
 
     
     
-    var myCanvas = createCanvas(420,550,WEBGL);
+    var myCanvas = createCanvas(windowWidth,windowHeight,WEBGL);
     resizeFrame();
     myCanvas.parent("frame");
     
@@ -20,9 +20,7 @@ function resizeFrame(){
     let ratio = frameWidth/frameHeight;
 
     document.getElementById("frame").style.top= (frameHeight*0.25)+"px"; 
-    document.getElementById("frame").style.left= (frameWidth*1.97)+"px"; 
-
-    document.getElementById("image-div").style.paddingLeft=(frameWidth*1.5)+"px";
+    document.getElementById("frame").style.left= (frameWidth*1.97)+"px";
     resizeCanvas(frameWidth,frameHeight);
 }
 function windowResized() {
