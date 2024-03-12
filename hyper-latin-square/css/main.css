@@ -1,24 +1,9 @@
-@font-face {
-    font-family: 'Roman';
-    src: url("../fonts/roman-uncial-modern/RomanUncialModern.ttf"); /*URL to font*/
-}
 
-h1{
-    margin:0;
-    position: absolute;
-    font-family: 'Roman';
-    font-size: 5em;
-}
 body{
     background-color:#eeeeec;
     
 }
-#image-div{
-    mask-mode: alpha;
-}
 
 #frame{
-    position: absolute;
     opacity: 0.8;
-    z-index: 1;
 }
