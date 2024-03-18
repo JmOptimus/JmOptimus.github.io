@@ -1,8 +1,14 @@
+@font-face {
+    font-family: Ojuju;
+    src: url("../fonts/Ojuju-VariableFont_wght.ttf");
+}
+
 body{
     background-color:#f5f5f5;
 }
 
 h1{
+    font-family: Ojuju;
     text-align: center;
 }
 
