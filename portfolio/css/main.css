@@ -25,3 +25,7 @@ icon:hover{
     opacity:1;
     transition:1s;
 }
+
+footer{
+    background-color: hsl(0,0,11%);
+}
