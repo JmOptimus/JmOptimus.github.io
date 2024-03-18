@@ -1,0 +1,16 @@
+body{
+    background-color:#f5f5f5;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    opacity: 80%;
+}
+img:hover{
+    cursor: pointer;
+    transition: opacity .2s;
+    opacity: 100%;
+}
