@@ -15,13 +15,13 @@ img:hover{
     opacity: 100%;
 }
 
-icon{
+.icon{
     width:5em;
     border-radius: 50%;
     opacity: 0.5;
 }
 
-icon:hover{
+.icon:hover{
     opacity:1;
     transition:1s;
 }
