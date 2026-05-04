@@ -1,4 +1,4 @@
-[
+{
 	"M01O"	:	{"full-name": "Mars Odyssey", "urls":["https://science.nasa.gov/mission/odyssey/"]},
 	"MRO"	:	{"full-name": "Mars Reconnaissance Orbiter", "urls":["https://science.nasa.gov/mission/mars-reconnaissance-orbiter/"]},
 	"MEX"	:	{"full-name": "Mars Express", "urls":["https://science.nasa.gov/mission/mars-express/"]},
@@ -8,4 +8,4 @@
 	"SPP"	:	{"full-name": "Solar Parker Probe", "urls":["https://science.nasa.gov/mission/parker-solar-probe/"]},
 	"JNO"	:	{"full-name": "Juno", "urls":["https://science.nasa.gov/mission/juno/"]},
 	"VGR"	:	{"full-name": "Voyager I", "urls":["https://science.nasa.gov/mission/voyager/"]}
-]
+}
