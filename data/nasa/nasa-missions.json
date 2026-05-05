@@ -5,7 +5,7 @@
 	{"code": "M20", "full-name": "Mars 2020 (Perseverance)", "urls":["https://science.nasa.gov/mission/mars-2020-perseverance/"]},
 	{"code": "CGO", "full-name": "Carruthers Geocorona Observatory", "urls":["https://science.nasa.gov/mission/carruthers-geocorona-observatory/"]},
 	{"code": "ACE", "full-name": "Advanced Composition Explorer", "urls":["https://science.nasa.gov/mission/ace/"]},
-	{"code": "SPP", "full-name": "Solar Parker Probe", "urls":["https://science.nasa.gov/mission/parker-solar-probe/"]},
-	{"code": "JNO", "full-name": "Juno", "urls":["https://science.nasa.gov/mission/juno/"]},
-	{"code": "VGR", "full-name": "Voyager I", "urls":["https://science.nasa.gov/mission/voyager/"]}
+	{"code": "SPP", "full-name": "Solar Parker Probe", "urls":["https://science.nasa.gov/mission/parker-solar-probe/"], "icons-path":"https://jmoptimus.github.io/data/nasa/icons/SPP.png"},
+	{"code": "JNO", "full-name": "Juno", "urls":["https://science.nasa.gov/mission/juno/"], "icons-path":"https://jmoptimus.github.io/data/nasa/icons/JUNO.png"},
+	{"code": "VGR", "full-name": "Voyager I", "urls":["https://science.nasa.gov/mission/voyager/"], "icons-path":"https://jmoptimus.github.io/data/nasa/icons/Voyager_I.png"}
 ]
